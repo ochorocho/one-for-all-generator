@@ -1,0 +1,8 @@
+FROM alpine:3.7
+
+# Install general stuff
+RUN apk update && apk upgrade && apk --update add python python-dev py-pip build-base &&\
+# Install doxygen
+    apk --update add doxygen && \
+# Clean cache
+    rm -rf /var/cache/apk/*

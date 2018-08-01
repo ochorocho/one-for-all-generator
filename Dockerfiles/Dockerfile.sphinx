@@ -1,0 +1,10 @@
+FROM alpine:3.7
+
+# Install general stuff
+RUN apk update && apk upgrade && apk --update add python python-dev py-pip build-base &&\
+# Install Sphinx doc and theme
+    pip install --upgrade pip && \
+    pip install -U Sphinx && \
+    pip install sphinx_rtd_theme && \
+# Clean cache
+    rm -rf /var/cache/apk/*
