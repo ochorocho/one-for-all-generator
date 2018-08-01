@@ -7,4 +7,5 @@ RUN apk update && apk upgrade && apk --update add python python-dev py-pip build
     pip install -U Sphinx && \
     pip install sphinx_rtd_theme && \
 # Clean cache
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    apk del curl wget build-base python-dev
